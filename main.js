@@ -70,8 +70,8 @@ function calculateTip(bill=0, tipPercentage=0, people=0) {
         bill = parseFloat(bill);
         tipPercentage = parseFloat(tipPercentage);
         people = parseInt(people);
-        const tipAmount = (bill * tipPercentage) / 100;
-        const totalAmount = (bill + tipAmount) * people;
+        const tipAmount = ((bill * tipPercentage) / 100) / people;
+        const totalAmount = (bill / people) + tipAmount;
         if (isNaN(tipAmount) || isNaN(tipAmount)) return null
         return { tipAmount, totalAmount };
     } catch (error) {
