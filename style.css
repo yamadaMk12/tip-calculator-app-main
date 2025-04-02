@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --Green400: hsl(172, 67%, 45%);
+    --Green900: hsl(183, 100%, 15%);
+    --Grey500: hsl(186, 14%, 43%);
+    --Grey400: hsl(184, 14%, 56%);
+    --Grey200: hsl(185, 41%, 84%);
+    --Grey50: hsl(189, 47%, 97%);
+    --White: hsl(0, 100%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+
+body {
+    background-color: var(--Grey200);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+main {
+    background-color: var(--White);
+    display: flex;
+    width: 35rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+section {
+    width: 50%;
+}
+
+.bill-field, .tip-field {
+    margin-bottom: 1.6rem;
+}
+
+.people-num-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.error-message {
+    color: tomato;
+    font-size: 0.7rem;
+    margin-bottom: 7px;
+    display: none;
+}
+
+.showed {
+    display: block;
+}
+
+.bill-field p, .tip-field > p, .people-num-head p:nth-child(1) {
+    font-size: 0.7rem;
+    color: var(--Grey500);
+    margin-bottom: 7px;
+}
+
+.input-after {
+    position: relative;
+}
+
+.err {
+    border: 2px solid tomato !important;
+    outline-color: tomato !important;
+}
+
+.input-after img {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 9px;
+}
+
+.input-after input {
+    width: 100%;
+    background-color: var(--Grey50);
+    color: var(--Green900);
+    border: none;
+    border-radius: 3px;
+    padding: 7px;
+    position: relative;
+    font-size: 15px;
+}
+
+.input-after input::placeholder {
+    color: var(--Grey200);
+}
+
+.input-after input:hover {
+    cursor: pointer;
+}
+
+.input-after input:focus {
+    outline-color: var(--Green400);
+    color: var(--Green900);
+}
+
+.input-after input:focus::placeholder {
+    color: var(--Grey400);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.option {
+    width: 100%;
+    height: 32px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--Green900);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.option:hover {
+    cursor: pointer;
+    background-color: var(--Grey200);
+    color: var(--Green900);
+}
+
+.selected {
+    background-color: var(--Green400);
+    color: var(--Green900);
+}
+
+.tips-grid input {
+    background-color: var(--Grey50);
+    border: none;
+    color: var(--Green900);
+    font-weight: 700;
+    padding-right: 5px;
+}
+
+.tips-grid input:hover {
+    cursor: pointer;
+    background-color: var(--Grey50);
+}
+
+.tips-grid input:focus {
+    outline-color: var(--Green400);
+    color: var(--Green900);
+}
+
+.tips-grid input::placeholder {
+    text-align: center;
+    font-weight: 700;
+    color: var(--Grey400);
+}
+
+.result-section {
+    background-color: var(--Green900);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.result-section button {
+    background-color: rgb(13,104,109);
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    text-transform: uppercase;
+    color: var(--Green900);
+    font-weight: 700;
+}
+
+.active-button {
+    background-color: var(--Green400) !important;
+}
+
+.result-section button:hover {
+    cursor: pointer;
+}
+
+.result-total, .result-tip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-tip {
+    margin-bottom: 1.5rem;
+}
+
+.result-total > div + p, .result-tip > div + p {
+    color: var(--Green400);
+    font-size: 2.1rem;
+}
+
+.result-total > div > p:nth-child(2), .result-tip > div > p:nth-child(2) {
+    font-size: 0.6rem;
+    color: var(--Grey500);
+}
+
+.result-total > div > p:nth-child(1), .result-tip > div > p:nth-child(1) {
+    font-size: 0.7rem;
+    color: var(--White);
+}
+
+@media screen and (max-width: 580px) {
+    .attribution {
+        display: none;
+    }
+
+    body {
+        height: auto;
+        padding-top: 2rem;
+    }
+
+    main {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    section {
+        width: 100%;
+    }
+}
